@@ -1,0 +1,29 @@
+ARCS - Automated Revision Control System
+
+Install
+-------
+
+  make
+  sudo make install
+
+or specify an alternative install prefix such as:
+
+  make PREFIX=/opt
+  sudo make install
+
+Documentation
+-------------
+
+See man(1) arcs aka arcs.1.txt
+
+Authors and Contact
+-------------------
+
+Alastair Poole <alastairpoole@gmail.com>
+Sam Watkins <swatkins@fastmail.fm>
+
+Freedom:
+--------
+
+This release is maintained by Sam and is in the public domain.
+Alastair maintains a GPL'd version of ARCS.

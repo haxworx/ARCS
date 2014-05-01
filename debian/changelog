@@ -1,0 +1,20 @@
+arcs (0.9.9.6~wip) unstable; urgency=low
+
+  * gzip -9 for manpages
+  * avoid adding CVS and RCS directories
+  * make "link tree" .arcs/tree optional, so can use in /etc
+  * include symlinks to .so etc
+  * fixed "del dir" bogus message to "del obj"
+  * auto detect "shared" from g+w bit of project dir, and set umask
+  * -c and -C cooperate / shared options
+  * fixed Makefile to work without man on windoze
+  * added .git/info/exclude files for better status reports (with -i)
+  * fixed usage line in help text
+
+ -- Sam Watkins <sam@nipl.net>  Tue, 17 Nov 2009 19:39:46 +1100
+
+arcs (0.9.9.5-1) unstable; urgency=low
+
+  * Initial debian package.
+
+ -- Sam Watkins <sam@nipl.net>  Sun, 19 Apr 2009 19:18:49 +0800

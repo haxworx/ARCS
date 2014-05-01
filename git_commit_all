@@ -1,0 +1,5 @@
+#!/bin/sh
+git update-index --refresh |
+sed 's/:.*//' | tr '\n' '\0' |
+xargs -0 --no-run-if-empty git update-index --add --remove
+git commit -m '.'

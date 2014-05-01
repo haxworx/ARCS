@@ -1,0 +1,93 @@
+list of some bugs:
+------------------
+
+
+arcs --get does not set .git/info/exclude
+
+
+warn in case of conflicts, don't rely on -v mode.
+grep err or maybe run `conflicts` ?
+
+
+need locking for running arcs, or it might run twice at once; and on server
+
+
+it does not detect disk-full errors, so db.txt gets trashed (not a big problem)
+
+
+git checkout -f  now seems to renumber all the files :/
+
+problem when renaming directories or delete directory and rename a file to the
+directory's old name.  Not sure if git itself handles this right!
+
+
+
+Error: arcs_init: getenv("USER")
+
+
+
+
+fsh gets stuck sometimes
+
+
+
+still doesn't cleanly finish the arcs update thing when pushing
+
+
+
+doesn't transmit empty dirs
+  (this is a git issue. could add a .keep file?)
+
+
+
+sam@alice:/x$ reload_web 
+Reloading web server config...6552
+.
+ARCS 0.3.3 at bind@alice.nipl.net:/freens
+using git backend...
+Already up-to-date.
+FreeNS 0.1.2
+no changes
+ARCS 0.3.3 at bind@sarah.nipl.net:/freens
+using git backend...
+Already up-to-date. Yeeah!
+Error: can't replace database
+Error: can't replace database
+
+
+
+
+when pushing, it does 3 steps, if the remote project files change during this
+changes can be lost.  need a locking method.  (or different backend / technique)
+
+
+
+
+
+
+FIXED BUGS:
+-----------
+
+
+0.3.5 can't create a repository remotely - need like an inverse "clone" - or use rsync in that case :/   - FIXED
+
+
+Now, how to clone the other way, like a pull?  that doesn't work too! - DONE
+
+
+$ arcs
+ARCS 0.5.0.3a at sam@lust:/home/sam/profile
+ARCS 0.5.0.3a at sam@alice.nipl.net:/home/sam/profile
+Already up-to-date.
+error: remote 'refs/heads/origin' is not a strict subset of local ref 'refs/heads/origin'. maybe you are not up-to-date and need to pull first?
+ARCS 0.5.0.3a at sam@lust:/home/sam/profile
+
+  # couldn't fix that one dunno why, needed to rebuild
+
+  FIXED (I think) - now delete "origin" branch after clone.  to fix existing
+    repos, run git-branch -d origin
+
+
+
+arcs is using sprintf instead of snprintf
+    FIXED

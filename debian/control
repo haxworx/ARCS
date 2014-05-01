@@ -1,0 +1,17 @@
+Source: arcs
+Section: net
+Priority: optional
+Maintainer: Sam Watkins <sam@nipl.net>
+Standards-Version: 0.5.0
+Build-Depends: debhelper (>> 4.0.0)
+
+Package: arcs
+Architecture: any
+Recommends: fsh, cvs, darcs
+Depends: libc6, openssh-client, git-core | subversion
+Description: Automated Revision Control System (arcs) is a wrapper for 
+ various revision control systems allowing: the creation and management of 
+ multiple repositories (locally and remote); simplification of the 
+ syncronisation between repositories and peers; almost-real-time file 
+ monitoring and updates (locally and remote); the execution of Makefiles
+ upon execution on remote peers.

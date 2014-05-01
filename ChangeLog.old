@@ -1,0 +1,110 @@
+2009-06-04
+	* Sam - changed license to public domain for this version with Al's
+	  permission, Al can maintain / release a GPL'd version.
+
+2009-05-30
+	* Sam - ported arcs to work with msysgit on windows.
+	* enabled elf-repellant by default
+
+2009-04-18
+	* Sam - tidied up scripts, don't commit if build-stamp exists, extra
+	  options for scripts, added more manpages.
+
+2009-02-26 - 2009-03-03
+	* Sam - Update call to git-pull to work with newer git.
+	* changed format of output to be hopefully more readable
+	* sshc server= comand   for a remote command in the same directory
+	* added -q quiet option
+	* ignore "modified" directory
+	* unified -q with -v, 6 levels of verbosity from -q -q -q to -v -v
+	* don't pull / push if unnecessary
+	* speed up the -f option (!)
+	* fixed so it will handle symlinks to directories
+	* modified to use ctime not mtime, so it will notice metadata changes.
+	  This makes it a little more eccentric but I want it to track mode.
+
+2007-05-15
+	* Al and Sam - Did some stuff.
+
+2007-04-15
+	* Al - Added preliminary Perl version or ARCS.
+
+2007-03-29
+	* Sam - 0.9.9.1 - fix bug in arcs_basename
+
+2007-03-19
+	* Alastair - Bump up to 0.9.9 to allow for work on 2.0.x branch.
+
+2007-03-18
+	* Sam - delete origin branch after clone,
+	  it seems to cause some errors (my unclueful response may be bogus)
+	* Sam - run arcs remotely immediately after a push, to avoid later
+	  messages.  this is a little bit slower, but cleaner
+
+2007-03-16
+        * Sam - max_processes = 10
+	* comments and blank lines in peers and projects files
+
+2007-03-13
+        * Sam - fix bug wasn't checking if chdir succeeds,
+	  so might run in the wrong directory!!
+
+2007-03-11
+        * Alastair - update manpage and copyright notices.
+        *  Updated debian package
+        *  0.5.0 ready for human consumption
+        * Sam - 0.4.7 ssh-command -> sshc
+
+2007-03-10
+        * Sam - 0.4.7 -p and -g work, finally :)
+        * Sam - 0.4.2 -g checks in and possibly creates remote repository
+        * Al - quick tidy up and update of manual pages
+        *  0.4.0 :P
+	*  works on OS X
+	* Sam - arcs -g
+	*  (fixed fsh on etch / python 2.4.4)
+	*  SSH=fsh arcs -a -f   :)
+	*  0.3.999999d
+
+2007-03-09
+	* Sam - reinstate ELF avoidance
+	*  - only check for ELF header if it's executable (to make less inefficent)
+
+2007-03-04
+	* Al - manpage, woohoo we have some documentation!
+	* - use git-init-db --shared and umask 0002, to support group projects
+	* Sam - .arcs/task - if there, it's used for commit/record messages
+
+2007-03-06
+	* Al & Sam - 0.3.5 use push (+ stuff) for push again.
+	* Al & Sam - 0.3.6 multiple projects
+	* MILESTONE!  it works properly from behind a firewall
+	* Al & Sam - 0.3.8 bugfix, make works again
+
+2006-12-13
+	* Sam - 0.3.4 use stderr consistently
+	* more safe_exit checks
+
+2006-12-13
+	* Sam - 0.3.3 multiple peer support, git push by remote pull.
+	  Using arcs for FreeNS.
+
+2006-12-09
+	* Sam - Ported to Windows and added Darcs backend. :)
+
+2006-11-07
+	* Alastair - Added option to change sleep times.
+
+2006-09-24
+	* Alastair - Added Verbosity. Test for ELF and object files.
+	* Sam - Fixed some bugs, made things sanerish.
+	* arcs-0.2.6  and it works! w00t!
+
+2006-09-23
+	* Sam - dodgy bogus rsync backend, half works; don't update db if errors
+	* Alastair - CVS backend
+
+2006-09-22
+	* Alastair - Added signal handling
+	* Sam - Escaping for filenames, MOVE command
+	* Alastair - Added support for svn directory adding and removing

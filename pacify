@@ -1,0 +1,19 @@
+#!/bin/bash -e
+usage() {
+    echo >&2 `basename $0`: resolves conflicts in a conflicted file.
+    echo >&2 usage: "[1|2] file ..."
+    exit 1
+}
+if [ "$#" -lt 1 -o ! \( "$1" = 1 -o "$1" = 2 \) ]; then
+    usage
+fi
+which="$1"; shift
+for A; do
+    if [ "$which" = 1 ]; then
+        sed '/^<<<<<<< /d; /^=======$/,/^>>>>>>> /d;'
+    elif [ "$which" = 2 ]; then
+        sed '/^<<<<<<< /,/^=======$/d; /^>>>>>>> /d;'
+    fi <"$A" >"$A.new.$$" || exit 1
+    cp "$A.new.$$" "$A"
+    rm "$A.new.$$"
+done
